@@ -1,0 +1,405 @@
+@font-face {
+    font-family: 'Cute';
+    src: url('../font/Cute-Bold.otf') format('opentype');
+    /* Add more formats if needed */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'christmass';
+    src: url('../font/The\ Christmas.otf') format('opentype');
+    /* Add more formats if needed */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'typewriter';
+    src: url('../font/Hand\ TypeWriter.ttf') format('truetype');
+    /* Add more formats if needed */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('../font/Roboto-Medium.ttf') format('truetype');
+    /* Add more formats if needed */
+    font-style: normal;
+}
+
+
+:root {
+    --color1 : #7D0A0A;
+    --color2 : #BF3131;
+    --color3 : #EAD196;
+    --color4 : #F3EDC8;
+    --color5 : #034F1B;
+    --map-color : #440404;
+  }
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Montserrat:ital,wght@0,200;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+
+
+/* Default styles for larger screens */
+body {
+    background-color: var(--color2);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive styles for smaller screens (e.g., iPhone 14 Pro Max) */
+/* @media (max-width: 414px) {
+    body {
+        font-size: 14px;
+    }
+} */
+
+h1 {
+    font-family: 'christmass', cursive;
+    /* font-size: 5rem; */
+}
+
+.cute-font {
+    font-family: 'Cute', sans-serif;
+}
+
+/* kreu */
+
+.kreu {
+    background-color: var(--color2);
+    height: 700px;
+    font-family: 'Montserrat', cursive;
+}
+
+/* Teksti Fillimit  */
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes jumpAnimation {
+    0%, 20%, 50%, 80%, 100% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.2);
+    }
+    60% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.jumping-text {
+    margin: 0;
+    color: var(--color3);
+    size: 8rem;
+    display: inline-block;
+    animation: fadeIn 1s ease-in-out, jumpAnimation 2s 6;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+}
+
+.animated-text1 {
+    color: var(--color1);
+    animation: fadeInRight 1s ease-out;
+     padding-top: 60px;
+    /* margin-bottom: 20px; */ 
+}
+
+.animated-text2 {
+
+    color: var(--color5);
+    animation: fadeInLeft 1s ease-out;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+}
+
+.animated-text1, .animated-text2 {
+    size: 3rem;
+}
+
+.vitiricountdown {
+    font-family: 'Montserrat';
+}
+
+
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interaction with elements behind */
+}
+
+.snowflake {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: snowfall linear infinite, rotate linear infinite;
+    opacity: 0.7;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* vitiricountdown */
+
+.countdown-container {
+    background: rgba(125, 10, 10, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.1);
+    margin: 25px;
+    text-align: center !important; /* Center the content */
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+#countdown {
+    display: flex;
+    gap: 10px;
+    font-size: 2rem;
+    justify-content: center; /* Center the child elements horizontally */
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    color: var(--color4);
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: var(--color4);
+}
+.vitiricountdown {
+    font-family: 'roboto' cursive;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: var(--color4); 
+}
+.vitiricountdowndiv {
+    width: 80%;
+}
+
+.text2023 {
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: var(--color4)
+}
+.text2023div {
+    margin-top: 300px;
+    margin-bottom: 200px;
+    width: 90%
+}
+
+
+/* fotot */
+
+.col-md-6 {
+    padding: 0;
+}
+
+.glassy-card {
+    width: 70%;
+    position: relative;
+    left: 25px;
+    overflow: hidden;
+    background:  rgba(125, 10, 10, 0.3);
+    border-radius: 15px;
+    margin: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  .glassy-card img {
+    margin-top: 23px;
+    width: 65%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.5s ease-in-out;
+  }
+  .glassy-card:hover img {
+    transform: scale(1.1);
+  }
+  .glassy-card-body {
+    padding: 20px;
+    flex: 1;
+  }
+
+  .card-text , .card-subtitle , .card-title{
+    color: var(--map-color);
+  }
+
+  .card-title {
+    font-family: 'typewriter' ;
+    font-weight: bolder;
+  }
+  .muzika {
+    margin: 0;
+  }
+
+
+
+
+
+  /* animated */
+  .animated {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  .bora {
+    width: 100%;
+    height: auto;
+  }
+
+
+.count1 {
+    color: var(--color5);
+}
+.count2 {
+    color: var(--color1);
+}
+.count3 {
+    color: var(--color3);
+}
+.count4 {
+    color: var(--color4);
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  #noButton {
+    background-color: var(--color1);
+    color: var(--color3)
+  }
+  #yesButton {
+    background-color: var(--color3);
+    color: var(--color1)
+  }
+
+  #result-message {
+    font-size: 20px;
+    color: var(--map-color);
+    margin-top: 20px;
+  }
+
+  .akmxhan {
+    font-family: 'roboto';
+    font-size: 1.75rem;
+    color: var(--map-color)
+  }
+
+
+  .ta-ngroh {
+    position: relative;
+    left: 30px;
+    margin-bottom: 5px;
+  }
+
+  .zemra11 {
+    position: relative;
+    top: 25px;
+    margin-bottom: 0px;
+  }
+
+  .card-subtitle{
+    color: #160101;
+    font-family: 'Montserrat';
+  }
+
+  .glowyy {
+    -webkit-box-shadow:0px 0px 63px 20px rgba(69,0,0,0.87);
+    -moz-box-shadow: 0px 0px 63px 20px rgba(69,0,0,0.87);
+    box-shadow: 0px 0px 63px 20px rgba(69,0,0,0.87);
+  }
+
+  .akexhan {
+    margin-top: 200px ;
+  }
+
+  .mtop {
+    margin-top: 100px;
+  }
+
+  .cont {
+    font-family: 'Montserrat' serif;
+    color: var(--color4);
+  }
+
+  .deco {
+    width: 100%;
+  }
