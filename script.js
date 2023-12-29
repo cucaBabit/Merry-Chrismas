@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // countdown timer
 
 // Set the date we're counting down to (New Year's Day)
-const countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+const countDownDate = new Date("Jan 01, 2024 00:00:00").getTime();
 
 // Update the countdown every 1 second
 const countdownInterval = setInterval(function () {
@@ -59,7 +59,7 @@ const countdownInterval = setInterval(function () {
     // If the countdown is over, display a message
     if (distance < 0) {
         clearInterval(countdownInterval);
-        countdownElement.innerHTML = "<h2>Gezuar Vitin e RI Pookie!! Tkam Xhan.</h2>";
+        countdownElement.innerHTML = '<h2 class="blah card-text">Gezuar Vitin e RI Pookie!! Tkam Xhan. <br>❤️❤️❤️</h2><div class="gifidiv"><img class="gifi" src="img/123456.gif"></div>';
     }
 }, 1000);
 
@@ -92,4 +92,50 @@ function moveNoButton() {
   }
   
 
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const clickCountElement = document.getElementById('click-count');
+    const clickButton = document.getElementById('yesButton');
+
+    // Retrieve the click count from localStorage
+    let clickCount = localStorage.getItem('clickCount') || 0;
+    clickCountElement.textContent = clickCount;
+
+    // Increment the click count on button click
+    clickButton.addEventListener('click', function () {
+        clickCount++;
+        clickCountElement.textContent = clickCount;
+
+        // Store the updated click count in localStorage
+        localStorage.setItem('clickCount', clickCount);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const messages = [
+        "Xhan",
+        "Zemer",
+        "Beb",
+        "Pookie",
+        "Pukki Ukii",
+        "Shpirt",
+        "Jet",
+        "N'Baçe"
+    ];
+
+    const messageContainer = document.getElementById('random-message');
+
+    function getRandomMessage() {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        return messages[randomIndex];
+    }
+
+    function displayRandomMessage() {
+        const randomMessage = getRandomMessage();
+        messageContainer.textContent = randomMessage;
+    }
+
+    displayRandomMessage();
+});
 
