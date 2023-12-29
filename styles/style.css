@@ -154,6 +154,19 @@ h1 {
     font-family: 'Montserrat';
 }
 
+.randommsg1 {
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: var(--color4); 
+}
+.randommsg2 {
+  font-family: 'Montserrat';
+  font-size: 4.5rem;
+  margin-bottom: 250px;
+  color: var(--color1); 
+  text-shadow: rgba(255, 255, 255,1) 0px 0px 30px;
+}
+
 
 #snow-container {
     position: fixed;
@@ -402,4 +415,17 @@ button {
 
   .deco {
     width: 100%;
+  }
+
+
+  .gifi {
+    width: 70%;
+  }
+
+  .gifidiv {
+    width: 100%;
+  }
+
+  .blah {
+    padding-top: 20px;
   }
