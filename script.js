@@ -93,23 +93,46 @@ function moveNoButton() {
   
 
 
-  document.addEventListener('DOMContentLoaded', function () {
+//   document.addEventListener('DOMContentLoaded', function () {
+//     const clickCountElement = document.getElementById('click-count');
+//     const clickButton = document.getElementById('yesButton');
+
+//     // Retrieve the click count from localStorage
+//     let clickCount = localStorage.getItem('clickCount') || 0;
+//     clickCountElement.textContent = clickCount;
+
+//     // Increment the click count on button click
+//     clickButton.addEventListener('click', function () {
+//         clickCount++;
+//         clickCountElement.textContent = clickCount;
+
+//         // Store the updated click count in localStorage
+//         localStorage.setItem('clickCount', clickCount);
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
     const clickCountElement = document.getElementById('click-count');
     const clickButton = document.getElementById('yesButton');
 
-    // Retrieve the click count from localStorage
-    let clickCount = localStorage.getItem('clickCount') || 0;
-    clickCountElement.textContent = clickCount;
+    let clickData = JSON.parse(localStorage.getItem('clickData')) || { count: 0, lastReset: new Date().toLocaleDateString() };
 
-    // Increment the click count on button click
+    // Check if it's a new day, reset count if necessary
+    const today = new Date().toLocaleDateString();
+    if (clickData.lastReset !== today) {
+        clickData.count = 0;
+        clickData.lastReset = today;
+        updateClickCount();
+    }
+
+    // Display the initial count
+    updateClickCount();
+
+    // Increment the click count on "Click me!" button click
     clickButton.addEventListener('click', function () {
-        clickCount++;
-        clickCountElement.textContent = clickCount;
-
-        // Store the updated click count in localStorage
-        localStorage.setItem('clickCount', clickCount);
+        clickData.count++;
+        updateClickCount();
     });
-});
 
 
 document.addEventListener('DOMContentLoaded', function () {
