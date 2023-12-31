@@ -134,6 +134,14 @@ document.addEventListener('DOMContentLoaded', function () {
         updateClickCount();
     });
 
+    function updateClickCount() {
+        clickCountElement.textContent = clickData.count;
+
+        // Store the updated click data in localStorage
+        localStorage.setItem('clickData', JSON.stringify(clickData));
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const messages = [
